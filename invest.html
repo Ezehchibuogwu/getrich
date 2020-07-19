@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <title>Document</title>
+    
+    
+  </head>
+  <body>
+    <div w3-include-html="navbar.html"></div>
+
+    <div class="flood">
+      <div id="main">
+        <div class="container mx-auto">
+          <div class="pt-2">
+            <div class="row">
+              <div class="col-lg-12 mx-auto text-white rounded-0 text-center">
+                <div class="card mb-5" style="background-color: black;">
+                  <div
+                    class="card-title"
+                    style="border-bottom: 1px solid white;"
+                  >
+                    <h3>INVEST NGN (&#8358;)</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div
+                        class="col-sm-12 col-md-6 pt-3"
+                        style="text-align: justify;"
+                      >
+                        <div class="ws">
+                          <strong>Minimum Investment:</strong>
+                          <span class="float-right">2000 NGN (&#8358;)</span>
+                        </div>
+
+                        <div class="ws">
+                          <strong>Maximum Investment:</strong>
+                          <span class="float-right">100000 NGN (&#8358;) </span>
+                        </div>
+
+                        <div class="ws">
+                          <strong>Duration:</strong>
+                          <span class="float-right">2 Days</span>
+                        </div>
+
+                        <div class="ws">
+                          <strong>Profit:</strong>
+                          <span class="float-right">50%</span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 col-sm-12">
+                        <form>
+                          <div class="input-group my-3">
+                            <input
+                              type="number"
+                              class="form-control form-control-lg rounded-0"
+                              placeholder="amount"
+                            />
+                            <div class="input-group-append">
+                              <div class="input-group-text bg-success">
+                                <b>NGN(&#8358;)</b>
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            type="submit"
+                            class="btn btn-success btn-block"
+                          >
+                            Invest Now
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- This will be dynamic for Completed investment-->
+                <div
+                  class="card"
+                  style="border: 1px solid #8d8d8d;"
+                  class="col-6 col-lg-8 col-12 mx-auto rounded-0 text-center text-dark p-2"
+                >
+                  <div
+                    class="card-title pt-2"
+                    style="border-bottom: 1px solid #4aa13c; color: black;"
+                  >
+                    <strong><p>08 Jul, 2020 11:09:19</p></strong>
+                  </div>
+                  <div class="card-body">
+                    <!-- ///////////////////////////////////////This is for completed for large investment-->
+                    <div class="container pb-3">
+                      <div class="d-none d-md-block">
+                        <div class="row bg-dark text-white mb-4">
+                          <div class="col-sm-3 col-6">
+                            <strong>Investment Amount</strong>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <strong>Paid Amount</strong>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <strong>Remaining Amount</strong>
+                          </div>
+
+                          <div class="col-md-3 col-6">
+                            <strong>Investment Status</strong>
+                          </div>
+                        </div>
+
+                        <div class="row pb-5 mt-3 text-dark">
+                          <div class="col-sm-3 col-6">
+                            <h5>2000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>70000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>45000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>
+                              <span
+                                style="font-size: larger; color: white;"
+                                class="badge badge-success badge-2x"
+                                >COMPLETED</span
+                              >
+                            </h5>
+                          </div>
+                        </div>
+
+                        <!-- //////////completed investment for smaller screen -->
+                        <div class="d-block d-md-none d-lg-none">
+                          <div class="row bg-dark text-white" id="lensC">
+                            <div class="col-6">
+                              <div class="ws">
+                                <strong>Investment Amount:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+
+                              <div class="ws">
+                                <strong>Paid AMount:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="ws">
+                                <strong>Remaining Amount:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+
+                              <div class="ws">
+                                <strong>Status:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="row bg-dark text-white pt-2 pb-3 d-block d-md-none d-lg-none"
+                        style="text-align: justify;"
+                      >
+                        <div class="col-sm-6 col-12">
+                          <div class="ws">
+                            <span>Investment Amount:</span>
+                            <span class="float-right"
+                              ><b>7000 NGN(&#8358;)</b></span
+                            >
+                          </div>
+
+                          <div class="ws pt-3">
+                            <span>Paid Amount:</span>
+                            <span class="float-right"
+                              ><b>4500 NGN(&#8358;)</b></span
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12">
+                          <div class="ws">
+                            <span>Remaining Amount:</span>
+                            <span class="float-right"
+                              ><b>2500 NGN(&#8358;)</b></span
+                            >
+                          </div>
+
+                          <div class="ws pt-3">
+                            <span>Status:</span>
+                            <span class="float-right badge badge-success"
+                              >COMPLETED</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- /////////////Recommitment Investment -->
+                      <div
+                        class="d-none d-md-block"
+                        style="border-top: 1px solid #4aa13c;"
+                      >
+                        <div class="row bg-dark text-white mb-4">
+                          <div class="col-sm-3 col-6">
+                            <strong>Recommitment Amount</strong>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <strong>Recommitment Paid </strong>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <strong>Remaining Recommitment </strong>
+                          </div>
+
+                          <div class="col-md-3 col-6">
+                            <strong>Recommitment Status</strong>
+                          </div>
+                        </div>
+
+                        <div class="row pb-5 mt-3 text-dark">
+                          <div class="col-sm-3 col-6">
+                            <h5>2000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>70000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>45000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>
+                              <span
+                                style="font-size: larger; color: white;"
+                                class="badge badge-warning badge-2x"
+                                >PENDING</span
+                              >
+                            </h5>
+                          </div>
+                        </div>
+
+                        <!-- //////////Recommitment investment for smaller screen -->
+                        <div class="d-block d-md-none d-lg-none">
+                          <div class="row bg-dark text-white" id="lensC">
+                            <div class="col-6">
+                              <div class="ws">
+                                <strong>Recommitment Amount:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+
+                              <div class="ws">
+                                <strong>Recommitment Paid :</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="ws">
+                                <strong>Remaining Recommitment:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+
+                              <div class="ws">
+                                <strong>Status:</strong>
+                                <span class="float-right">50%</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="row bg-dark text-white pt-2 pb-3 d-block d-md-none d-lg-none"
+                        style="text-align: justify;"
+                      >
+                        <div class="col-sm-6 col-12">
+                          <div class="ws">
+                            <span>Recommitment Amount:</span>
+                            <span class="float-right"
+                              ><b>7000 NGN(&#8358;)</b></span
+                            >
+                          </div>
+
+                          <div class="ws pt-3">
+                            <span>Recommitment Paid :</span>
+                            <span class="float-right"
+                              ><b>4500 NGN(&#8358;)</b></span
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12">
+                          <div class="ws">
+                            <span>Remaining Recommitment:</span>
+                            <span class="float-right"
+                              ><b>2500 NGN(&#8358;)</b></span
+                            >
+                          </div>
+
+                          <div class="ws pt-3">
+                            <span>Status:</span>
+                            <span class="float-right badge badge-warning"
+                              >PENDING</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //////////Complete recommitment -->
+
+                      <div
+                        class="d-none d-md-block"
+                        style="border-top: 1px solid #4aa13c;"
+                      >
+                        <div class="row bg-dark text-white mb-4">
+                          <div class="col-sm-3 col-6">
+                            <strong>Profit Amount</strong>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <strong>Withdraw Amount </strong>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <strong>Withdraw Time </strong>
+                          </div>
+
+                          <div class="col-md-3 col-6">
+                            <strong>Action Required</strong>
+                          </div>
+                        </div>
+
+                        <div class="row pb-5 mt-3 text-dark">
+                          <div class="col-sm-3 col-6">
+                            <h5>2000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>70000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>45000 <b>NGN(&#8358;)</b></h5>
+                          </div>
+
+                          <div class="col-sm-3 col-6">
+                            <h5>
+                              <span
+                                style="font-size: x-small; color: white;"
+                                class="badge badge-danger badge-2x"
+                                >CompleteRecommitment</span
+                              >
+                            </h5>
+                          </div>
+                        </div>
+
+                        <!-- //////////CompleteRecommitment investment for smaller screen -->
+                        <div class="d-block d-md-none d-lg-none">
+                          <div class="row bg-dark text-white" id="lensC">
+                            <div class="col-6">
+                              <div class="ws">
+                                <strong>Profit Amount:</strong>
+                              </div>
+
+                              <div class="ws">
+                                <strong>Withdraw Amount :</strong>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="ws">
+                                <strong>Withdraw Time:</strong>
+                              </div>
+
+                              <div class="ws">
+                                <strong>Action Required:</strong>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="row bg-dark text-white pt-2 pb-3 d-block d-md-none d-lg-none"
+                        style="text-align: justify;"
+                      >
+                        <div class="col-sm-6 col-12">
+                          <div class="ws">
+                            <span>Profit Amount:</span>
+                            <span class="float-right"
+                              ><b>7000 NGN(&#8358;)</b></span
+                            >
+                          </div>
+
+                          <div class="ws pt-3">
+                            <span>Withdraw Amount :</span>
+                            <span class="float-right"
+                              ><b>4500 NGN(&#8358;)</b></span
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12">
+                          <div class="ws">
+                            <span>Withdraw Time:</span>
+                            <span class="float-right"
+                              ><b class="text-warning">NOW</b></span
+                            >
+                          </div>
+
+                          <div class="ws pt-3">
+                            <span>Action Required:</span>
+                            <span
+                              style="font-size: 8px;"
+                              class="float-right badge badge-danger"
+                              >Complete Recommitment</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                   <!-- This will be 2nd dynamic for Ongoing investment-->
+                <div
+                class="card"
+                style="border: 1px solid #4aa13c;"
+                class="col-6 col-lg-8 col-12 mx-auto rounded-0 text-center text-dark p-2"
+              >
+                <div
+                  class="card-title pt-2"
+                  style="border-bottom: 1px solid #4aa13c; color: black;"
+                >
+                  <strong><p>08 Jul, 2020 11:09:19</p></strong>
+                </div>
+                <div class="card-body">
+                  <!-- ///////////////////////////////////////This is for completed for large investment-->
+                  <div class="container pb-3">
+                    <div class="d-none d-md-block">
+                      <div class="row bg-dark text-white mb-4">
+                        <div class="col-sm-3 col-6">
+                          <strong>Investment Amount</strong>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <strong>Paid Amount</strong>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <strong>Remaining Amount</strong>
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                          <strong>Investment Status</strong>
+                        </div>
+                      </div>
+
+                      <div class="row pb-5 mt-3 text-dark">
+                        <div class="col-sm-3 col-6">
+                          <h5>2000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>70000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>45000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>
+                            <span
+                              style="font-size: larger; color: white;"
+                              class="badge badge-success badge-2x"
+                              >COMPLETED</span
+                            >
+                          </h5>
+                        </div>
+                      </div>
+
+                      <!-- //////////completed investment for smaller screen -->
+                      <div class="d-block d-md-none d-lg-none">
+                        <div class="row bg-dark text-white" id="lensC">
+                          <div class="col-6">
+                            <div class="ws">
+                              <strong>Investment Amount:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+
+                            <div class="ws">
+                              <strong>Paid AMount:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="ws">
+                              <strong>Remaining Amount:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+
+                            <div class="ws">
+                              <strong>Status:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="row bg-dark text-white pt-2 pb-3 d-block d-md-none d-lg-none"
+                      style="text-align: justify;"
+                    >
+                      <div class="col-sm-6 col-12">
+                        <div class="ws">
+                          <span>Investment Amount:</span>
+                          <span class="float-right"
+                            ><b>7000 NGN(&#8358;)</b></span
+                          >
+                        </div>
+
+                        <div class="ws pt-3">
+                          <span>Paid Amount:</span>
+                          <span class="float-right"
+                            ><b>4500 NGN(&#8358;)</b></span
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-12">
+                        <div class="ws">
+                          <span>Remaining Amount:</span>
+                          <span class="float-right"
+                            ><b>2500 NGN(&#8358;)</b></span
+                          >
+                        </div>
+
+                        <div class="ws pt-3">
+                          <span>Status:</span>
+                          <span class="float-right badge badge-success"
+                            >PENDING</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- /////////////Recommitment Investment -->
+                    <div
+                      class="d-none d-md-block"
+                      style="border-top: 1px solid #4aa13c;"
+                    >
+                      <div class="row bg-dark text-white mb-4">
+                        <div class="col-sm-3 col-6">
+                          <strong>Recommitment Amount</strong>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <strong>Recommitment Paid </strong>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <strong>Remaining Recommitment </strong>
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                          <strong>Recommitment Status</strong>
+                        </div>
+                      </div>
+
+                      <div class="row pb-5 mt-3 text-dark">
+                        <div class="col-sm-3 col-6">
+                          <h5>2000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>70000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>45000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>
+                            <span
+                              style="font-size: larger; color: white;"
+                              class="badge badge-warning badge-2x"
+                              >PENDING</span
+                            >
+                          </h5>
+                        </div>
+                      </div>
+
+                      <!-- //////////Recommitment investment for smaller screen -->
+                      <div class="d-block d-md-none d-lg-none">
+                        <div class="row bg-dark text-white" id="lensC">
+                          <div class="col-6">
+                            <div class="ws">
+                              <strong>Recommitment Amount:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+
+                            <div class="ws">
+                              <strong>Recommitment Paid :</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="ws">
+                              <strong>Remaining Recommitment:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+
+                            <div class="ws">
+                              <strong>Status:</strong>
+                              <span class="float-right">50%</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="row bg-dark text-white pt-2 pb-3 d-block d-md-none d-lg-none"
+                      style="text-align: justify;"
+                    >
+                      <div class="col-sm-6 col-12">
+                        <div class="ws">
+                          <span>Recommitment Amount:</span>
+                          <span class="float-right"
+                            ><b>7000 NGN(&#8358;)</b></span
+                          >
+                        </div>
+
+                        <div class="ws pt-3">
+                          <span>Recommitment Paid :</span>
+                          <span class="float-right"
+                            ><b>4500 NGN(&#8358;)</b></span
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-12">
+                        <div class="ws">
+                          <span>Remaining Recommitment:</span>
+                          <span class="float-right"
+                            ><b>2500 NGN(&#8358;)</b></span
+                          >
+                        </div>
+
+                        <div class="ws pt-3">
+                          <span>Status:</span>
+                          <span class="float-right badge badge-warning"
+                            >PENDING</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //////////Complete recommitment -->
+
+                    <div
+                      class="d-none d-md-block"
+                      style="border-top: 1px solid #4aa13c;"
+                    >
+                      <div class="row bg-dark text-white mb-4">
+                        <div class="col-sm-3 col-6">
+                          <strong>Profit Amount</strong>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <strong>Withdraw Amount</strong>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <strong>Withdraw Time </strong>
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                          <strong>Action Required</strong>
+                        </div>
+                      </div>
+
+                      <div class="row pb-5 mt-3 text-dark">
+                        <div class="col-sm-3 col-6">
+                          <h5>2000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>70000 <b>NGN(&#8358;)</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5 class="text-warning">22h :40m :5sec</b></h5>
+                        </div>
+
+                        <div class="col-sm-3 col-6">
+                          <h5>
+                            <span
+                              style="font-size: larger; color: white;"
+                              class="badge badge-warning badge-2x"
+                              >ONGOING</span
+                            >
+                          </h5>
+                        </div>
+                      </div>
+
+                      <!-- //////////CompleteRecommitment investment for smaller screen -->
+                      <div class="d-block d-md-none d-lg-none">
+                        <div class="row bg-dark text-white" id="lensC">
+                          <div class="col-6">
+                            <div class="ws">
+                              <strong>Profit Amount:</strong>
+                            </div>
+
+                            <div class="ws">
+                              <strong>Withdraw Amount :</strong>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="ws">
+                              <strong>Withdraw Time:</strong>
+                            </div>
+
+                            <div class="ws">
+                              <strong>Action Required:</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="row bg-dark text-white pt-2 pb-3 d-block d-md-none d-lg-none"
+                      style="text-align: justify;"
+                    >
+                      <div class="col-sm-6 col-12">
+                        <div class="ws">
+                          <span>Profit Amount:</span>
+                          <span class="float-right"
+                            ><b>7000 NGN(&#8358;)</b></span
+                          >
+                        </div>
+
+                        <div class="ws pt-3">
+                          <span>Withdraw Amount :</span>
+                          <span class="float-right"
+                            ><b>4500 NGN(&#8358;)</b></span
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 col-12">
+                        <div class="ws">
+                          <span>Withdraw Time:</span>
+                          <span class="float-right"
+                            ><b class="text-warning">22h :40m :5sec</b></span
+                          >
+                        </div>
+
+                        <div class="ws pt-3">
+                          <span>Action Required:</span>
+                          <span
+                            
+                            class="float-right badge badge-warning"
+                            >ONGOING</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function openSlideMenu() {
+        document.getElementById("side-menu").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeSlideMenu() {
+        document.getElementById("side-menu").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // navbar
+      
+      w3IncludeHTML();
+
+    </script>
+  </body>
+</html>
